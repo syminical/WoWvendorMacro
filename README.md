@@ -17,20 +17,20 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 ### Use
 1. Have the NPC targeted.
 2. Scroll the mouse wheel in the direction that you bound to open the shop.
-3. Scroll in the other direciton.
+3. Scroll in the other direction.
 4. Repeat. **FAST**.  
 **BTW...** you can tell it is working if you see the shop opening and closing. The interact bind opens the shop, and the macro closes it after trying to buy the item.
 
 ### Advice
 * Your ping **(lag)** will play a large part in beating other players who may also be using a macro.
-  - You may miss the item, but maybe you can at least get the spawn timer from the timestamp. Try again later?
+  - You may miss the item, but maybe you can at least get the spawn timer from the time stamp. Try again later?
 * This is not optimal mouse wheel spam! You need to spam **BOTH** directions quickly!!
   * Try out long and short swipes; the goal is to spam the sweet spot between scrolling up and then scrolling down. Scrolling up or down too long is bad.
 * This particular recipe respawned every 15 min on my server, and the npc's death did not restart the item's respawn timer.
 * The vendor sells it for **2g 20s**, so come prepared.
-* Use the success timestamp to figure out the item's respawn time. This can change upon server restart, or from slow buys.
-  ![Success timestamp example.](https://steamuserimages-a.akamaihd.net/ugc/1018319920533025653/16A2C20BB16E7D8CF3DB9FFB13D64200153128AF/)  
-  A nice cycle is created for **[Formula: Runed Arcanite Rod]**. Add **15min** to the success time stamp until it is complete.  
+* Use the success time stamp from the macro to figure out the item's respawn time. It can change upon server restart, or from slow buys.
+  ![Success time stamp example.](https://steamuserimages-a.akamaihd.net/ugc/1018319920533025653/16A2C20BB16E7D8CF3DB9FFB13D64200153128AF/)  
+  **[Formula: Runed Arcanite Rod]**'s respawn timer creates a cycle. Add **15min** to the time stamp until it is complete.  
   **> ... :39, :54, :09, :24 ...** 
 
 ### Customize
@@ -57,7 +57,7 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
        For **[Formula: Runed Arcanite Rod]** checking **index 10** for the character `'R'` is safe enough. If you choose to use multiple tests, save the result of `GetMerchantItemInfo(i)` to a variable so that you do not waste time re-requesting it.
   3. At this point the name test either **fails** or **succeeds**:
      - **SUCCESS**  
-       The item is purchased, a timestamp is sent to your chat, and the loop is broken.
+       The item is purchased, a time stamp is sent to your chat, and the loop is broken.
      - **FAIL**  
        Move on to the next slot if there are any left to check.
   4. The shop window is closed so that you can reopen it with the keybind to refresh and retry. This also provides some feedback while spamming.
