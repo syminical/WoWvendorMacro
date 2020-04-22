@@ -1,0 +1,1 @@
+/script for i=1, GetMerchantNumItems() do print(i, GetMerchantItemInfo(i)) end

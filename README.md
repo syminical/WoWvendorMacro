@@ -37,7 +37,7 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 * Buy a different Item:
   1. Find out the slot number the item has in the shop inventory. This can change if there are other limited quantity recipes with a lower slot number than your target item.
      ![Slot id macro example.](https://i.imgur.com/t88Yc4q.png)  
-     Notice how the number for **[Formula: Runed Arcanite Rod]** is 30? There is another **Formula** above it **(29)**, which may be sold out when our target item spawns.
+     Notice how the number for **[Formula: Runed Arcanite Rod]** is **30**? There is another **Formula** above it **(29)**, which may be sold out when our target item spawns.
      For this npc, there are no other limited quantity items above our target that can change its slot; therefore the only slots our target will be in are **29** and **30**.  
      **NOTE** It may be difficult to get such an accurate print out on a high population server.
   2. Now that you know the slot number, change the for loop values in the script to scan only the slots you need. The more slots scanned, the slower the script. `for i=START,STOP`  
