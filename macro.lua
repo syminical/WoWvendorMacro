@@ -1,0 +1,1 @@
+/script for i=29, 30 do x = GetMerchantItemInfo(i); if x:sub(1, 2) == "Fo" then if x:sub(10, 10) == "R" then BuyMerchantItem(i); DEFAULT_CHAT_FRAME:AddMessage(string.format("%s:%s HIT", GetGameTime()), 1, 1, 0, 3) break end end end CloseMerchant()
