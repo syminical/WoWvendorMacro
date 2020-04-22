@@ -12,10 +12,7 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 6. Bind the slot holding the macro to your mouse's scroll wheel.
 7. Scroll down to **Targeting Fuctions**, and bind **Interact With Target** to the other direction of the mouse wheel.
 8. Consider making a separate macro to target the npc, just in case.
-  * 
-  ```
-  /target Lorelae Wintersong
-  ```
+  * `/target Lorelae Wintersong`
 
 ### Use
 1. Have the NPC targeted.
