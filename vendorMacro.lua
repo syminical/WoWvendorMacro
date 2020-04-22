@@ -1,1 +1,1 @@
-/script for i=29, 30 do if GetMerchantItemInfo(i):sub(10, 10) == "R" then BuyMerchantItem(i); DEFAULT_CHAT_FRAME:AddMessage(string.format("%s:%s HIT", GetGameTime()), 1, 1, 0, 3) break end end CloseMerchant()
+/script for i=29, 30 do if GetMerchantItemInfo(i):sub(10, 10) == "R" then BuyMerchantItem(i); DEFAULT_CHAT_FRAME:AddMessage(string.format("%s:%s Item found!", GetGameTime()), 1, 1, 0, 3) break end end CloseMerchant()

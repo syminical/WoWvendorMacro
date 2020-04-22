@@ -28,21 +28,21 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
   * Try out long and short swipes; the goal is to spam the sweet spot between scrolling up and then scrolling down. Scrolling up or down too long is bad.
 * This particular recipe respawned every 15 min on my server, and the npc's death did not restart the item's respawn timer.
 * The vendor sells it for **2g 20s**, so come prepared.
-* Use the success time stamp from the macro to figure out the item's respawn time. It can change upon server restart, or from slow buys.
+* Use the time stamp from the macro to figure out the item's respawn time. It can change upon server restart, or from slow buys.  
   ![Success time stamp example.](https://steamuserimages-a.akamaihd.net/ugc/1018319920533025653/16A2C20BB16E7D8CF3DB9FFB13D64200153128AF/)  
-  **Above**: The macro saw the item, bought it, and saw it again before the shop updated, in under a second.  
+  **Above**: The macro saw the item, bought it, saw it again before the shop updated, all in under a second.  
   **[Formula: Runed Arcanite Rod]**'s respawn timer creates a cycle. Add **15min** to the time stamp until it is complete.  
   **> ... :39, :54, :09, :24 , :39, ...** 
 
 ### Customize
 * Buy a different Item:
-  1. Find out the slot number the item has in the shop inventory. This can change if there are other limited quantity recipes with a lower slot number than your target item.  
-     Use the `listItems` macro with a shop open to get the output below.
+  1. Find out the slot number the item has in the shop inventory. It can change if there are other limited quantity recipes with a lower slot number than your target item.  
+     Use the `listItems` macro with a shop open to get the output below.  
      ![Slot id macro example.](https://i.imgur.com/6Qc5TzK.png)  
      Notice how the number for **[Formula: Runed Arcanite Rod]** is **30**? There is another **Formula** above it **(29)**, which may be sold out when our target item spawns.
      For this npc, there are no other limited quantity items above our target that can change its slot; therefore the only slots our target will be in are **29** and **30**.  
      **NOTE** It may be difficult to get such an accurate print out on a high population server.
-  2. Now that you know the slot number, change the for loop values in the script to scan only the slots you need. The more slots scanned, the slower the script. `for i=START,STOP`  
+  2. Now that you know the slot number, change the `for` loop values in the script to scan only the slots you need. The more slots scanned, the slower the script. `for i=START,STOP`  
      ( **START** & **STOP** are index integers )
   3. Edit the `if` statement to match just enough characters to confirm your purchase. For **[Formula: Runed Arcanite Rod]**, it is not enough to search for part of **Formula** since there is another formula. It is not reasonable to expect to buy both and beat other macros unless you have much lower ping than your competition. ( Just one is hard. )  
      **NOTE** WoW's `/script` uses the **LUA** language; LUA starts counting with **1** not **0**, unlike some other programming languages.
