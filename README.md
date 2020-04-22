@@ -30,13 +30,15 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 * The vendor sells it for **2g 20s**, so come prepared.
 * Use the success time stamp from the macro to figure out the item's respawn time. It can change upon server restart, or from slow buys.
   ![Success time stamp example.](https://steamuserimages-a.akamaihd.net/ugc/1018319920533025653/16A2C20BB16E7D8CF3DB9FFB13D64200153128AF/)  
+  **Above**: The macro saw the item, bought it, and saw it again before the shop updated, in under a second.  
   **[Formula: Runed Arcanite Rod]**'s respawn timer creates a cycle. Add **15min** to the time stamp until it is complete.  
-  **> ... :39, :54, :09, :24 ...** 
+  **> ... :39, :54, :09, :24 , :39, ...** 
 
 ### Customize
 * Buy a different Item:
-  1. Find out the slot number the item has in the shop inventory. This can change if there are other limited quantity recipes with a lower slot number than your target item.
-     ![Slot id macro example.](https://i.imgur.com/t88Yc4q.png)  
+  1. Find out the slot number the item has in the shop inventory. This can change if there are other limited quantity recipes with a lower slot number than your target item.  
+     Use the `listItems` macro with a shop open to get the output below.
+     ![Slot id macro example.](https://i.imgur.com/6Qc5TzK.png)  
      Notice how the number for **[Formula: Runed Arcanite Rod]** is **30**? There is another **Formula** above it **(29)**, which may be sold out when our target item spawns.
      For this npc, there are no other limited quantity items above our target that can change its slot; therefore the only slots our target will be in are **29** and **30**.  
      **NOTE** It may be difficult to get such an accurate print out on a high population server.
