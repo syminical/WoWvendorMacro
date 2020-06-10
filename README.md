@@ -6,12 +6,12 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 ### Setup
 1. In-game press **ESC** to bring up the menu, then click on the **Macros** button.
 2. Create a new macro, enter a name, pick an icon. ( A single space looks best, imo. )
-3. Paste the code into the text box.
+3. Copy the code from the **vendorMacro.lua** link above, and paste it into the text box ingame.
 4. Drag the macro icon to your hotkey bar. ( Remember this slot! )
 5. Bring up the **ESC** menu again, and click **Key Bindings**.
-6. Bind the slot holding the macro to your mouse's scroll wheel.
+6. Bind the slot you dropped the macro icon on to your mouse's scroll wheel. (  up or down )
 7. Scroll down to **Targeting Fuctions**, and bind **Interact With Target** to the other direction of the mouse wheel.
-8. Consider making a separate macro to target the npc, just in case.
+8. Consider making a separate macro to quickly target the npc, just in case.
    * `/target Lorelae Wintersong`
 
 ### Use
@@ -29,21 +29,21 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 * This particular recipe respawned every 15 min on my server, and the npc's death did not restart the item's respawn timer.
 * The vendor sells it for **2g 20s**, so come prepared.
 * Use the time stamp from the macro to figure out the item's respawn time. It can change upon server restart, or from slow buys.  
-  ![Success time stamp example.](https://steamuserimages-a.akamaihd.net/ugc/1018319920533025653/16A2C20BB16E7D8CF3DB9FFB13D64200153128AF/)  
+  ![Success time stamp example.](images/successfulPurchase.png)  
   **Above**: The macro saw the item, bought it, saw it again before the shop updated, all in under a second.  
-  **[Formula: Runed Arcanite Rod]**'s respawn timer creates a cycle. Add **15min** to the time stamp until it is complete.  
-  **> ... :39, :54, :09, :24 , :39, ...** 
+  **[Formula: Runed Arcanite Rod]**'s respawn timer creates a 1 hour cycle. Add **15min** to the time stamp until it is complete.  Start spamming maybe a minute early until you see it.
+  **> ... 11:39, 11:54, 12:09, 12:24 , 12:39, ...** 
 
 ### Customize
 * Buy a different Item:
   1. Find out the slot number the item has in the shop inventory. It can change if there are other limited quantity recipes with a lower slot number than your target item.  
-     Use the `listItems` macro with a shop open to get the output below.  
-     ![Slot id macro example.](https://i.imgur.com/6Qc5TzK.png)  
+     Use the macro from the **listItemsMacro.lua** link above with a shop open to get the output below:  
+     ![Slot id macro example.](images/itemIDScan.png)  
      Notice how the number for **[Formula: Runed Arcanite Rod]** is **30**? There is another **Formula** above it **(29)**, which may be sold out when our target item spawns.
      For this npc, there are no other limited quantity items above our target that can change its slot; therefore the only slots our target will be in are **29** and **30**.  
      **NOTE** It may be difficult to get such an accurate print out on a high population server.
-  2. Now that you know the slot number, change the `for` loop values in the script to scan only the slots you need. The more slots scanned, the slower the script. `for i=START,STOP`  
-     ( **START** & **STOP** are index integers )
+  2. Now that you know the slot number, change the `for` loop values in the script to scan only the slots you need. The more slots scanned, the slower the script.  
+     `for i=START,STOP`  ( **START** & **STOP** are index integers )
   3. Edit the `if` statement to match just enough characters to confirm your purchase. For **[Formula: Runed Arcanite Rod]**, it is not enough to search for part of **Formula** since there is another formula. It is not reasonable to expect to buy both and beat other macros unless you have much lower ping than your competition. ( Just one is hard. )  
      **NOTE** WoW's `/script` uses the **LUA** language; LUA starts counting with **1** not **0**, unlike some other programming languages.
   4. Take a look at the [**WoW API**](https://wowwiki.fandom.com/wiki/World_of_Warcraft_API) for more information on specific functions that are available.
