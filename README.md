@@ -30,8 +30,8 @@ This is useful for fresh servers. There will be a lot of players trying to buy i
 * The vendor sells it for **2g 20s**, so come prepared.
 * Use the time stamp from the macro to figure out the item's respawn time. It can change upon server restart, or from slow buys.  
   ![Success time stamp example.](images/successfulPurchase.png)  
-  **Above**: The macro saw the item, bought it, saw it again before the shop updated, all in under a second.  
-  **[Formula: Runed Arcanite Rod]**'s respawn timer creates a 1 hour cycle. Add **15min** to the time stamp until it is complete.  Start spamming maybe a minute early until you see it.
+  **Above**: The macro saw the item, bought it, and saw it again before the shop updated; all in under a second.  
+  **[Formula: Runed Arcanite Rod]**'s respawn timer creates a 1 hour cycle. Add **15min** to the time stamp until it is complete.  Start spamming maybe a minute early until you see it.  
   **> ... 11:39, 11:54, 12:09, 12:24 , 12:39, ...** 
 
 ### Customize
